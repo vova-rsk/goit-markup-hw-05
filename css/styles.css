@@ -690,6 +690,29 @@ button {
   border-radius: 2px;
 }
 
+.case-list li {
+  position: relative;
+}
+
+.case-list .sign {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--current-text-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
 /*
  * Проверка размещения контента с помощью рамки outline
  */
