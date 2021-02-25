@@ -240,6 +240,12 @@ button {
   color: var(--accent-color);
 }
 
+.navigation-list a,
+.header-contacts-list a,
+.footer-contacts-list a {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Добавление нижнего подчеркивания в header */
 .header {
   border-bottom: 1px solid #ececec;
@@ -414,6 +420,10 @@ button {
   background-color: var(--third-bg-color);
   border-style: none;
   border-radius: 4px;
+  box-shadow: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Стилизация активированной кнопки "Все" секции "Портфолио" */
@@ -490,6 +500,7 @@ button {
 /* Задаем ссылкам карточек в портфолио блочный тип, чтоб использовать украшательства */
 .card > .card-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Оформленеие вертикальных отступов основного контейнера в footer */
@@ -566,6 +577,8 @@ button {
   border: none;
   border-radius: 50%;
   color: #afb1b8;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Эффекты смены цвета и фона при ховере и фокусе */
@@ -583,6 +596,8 @@ button {
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Задаем смену цвета лого и рамки при hover и focus */
@@ -649,6 +664,7 @@ button {
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Эффект смены беграунд-фона при ховере и фокусе */
