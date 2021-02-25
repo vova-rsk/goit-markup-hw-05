@@ -18,6 +18,10 @@
   --main-font-family: sans-serif;
   --secondary-font-name: 'Raleway';
   --secondary-font-family: sans-serif;
+
+  /* Параметры для использования трансфомации */
+  --delay: 250ms;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*
@@ -243,7 +247,7 @@ button {
 .navigation-list a,
 .header-contacts-list a,
 .footer-contacts-list a {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--delay) var(--time-function);
 }
 
 /* Добавление нижнего подчеркивания в header */
@@ -421,9 +425,9 @@ button {
   border-style: none;
   border-radius: 4px;
   box-shadow: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--delay) var(--time-function),
+    color var(--delay) var(--time-function),
+    box-shadow var(--delay) var(--time-function);
 }
 
 /* Стилизация активированной кнопки "Все" секции "Портфолио" */
@@ -500,7 +504,7 @@ button {
 /* Задаем ссылкам карточек в портфолио блочный тип, чтоб использовать украшательства */
 .card > .card-link {
   display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--delay) var(--time-function);
 }
 
 /* Оформленеие вертикальных отступов основного контейнера в footer */
@@ -577,8 +581,8 @@ button {
   border: none;
   border-radius: 50%;
   color: #afb1b8;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--delay) var(--time-function),
+    color var(--delay) var(--time-function);
 }
 
 /* Эффекты смены цвета и фона при ховере и фокусе */
@@ -596,8 +600,8 @@ button {
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid #afb1b8;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--delay) var(--time-function),
+    border-color var(--delay) var(--time-function);
 }
 
 /* Задаем смену цвета лого и рамки при hover и focus */
@@ -634,7 +638,6 @@ button {
 
 /* Задание размеров и верхнего отступа контейнеру ПРИСОЕДИНЯЙТЕСЬ в footer */
 .footer .agitation-container {
-  margin-top: 12px;
   width: 206px;
   max-height: 80px;
 }
@@ -664,7 +667,7 @@ button {
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--delay) var(--time-function);
 }
 
 /* Эффект смены беграунд-фона при ховере и фокусе */
@@ -677,6 +680,7 @@ button {
 .footer .container {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
 }
 
 /* Эффект тени при ховере и фокусе на карточке в портфолио */
@@ -686,6 +690,7 @@ button {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+/* Позиционирование и оформление подчеркивание текущей страницы*/
 .navigation-studia.current,
 .navigation-portfolio.current,
 .navigation-contacts.current {
@@ -698,7 +703,7 @@ button {
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translatey(calc(100% + 28px));
+  transform: translateY(calc(100% + 28px));
   display: block;
   width: 100%;
   height: 4px;
@@ -707,6 +712,7 @@ button {
   border-radius: 2px;
 }
 
+/* Позиционирование и оформление подписи картинок Чем мы занимаемся */
 .case-list li {
   position: relative;
 }
@@ -730,6 +736,7 @@ button {
   background: rgba(47, 48, 58, 0.8);
 }
 
+/* Оформление заднего фона модалки */
 .backdrop {
   position: fixed;
   top: 0;
@@ -738,7 +745,7 @@ button {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--delay) var(--time-function);
 }
 
 .backdrop.is-hidden {
@@ -747,6 +754,7 @@ button {
   pointer-events: none;
 }
 
+/* Оформление модального окна */
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.8);
 }
@@ -763,9 +771,10 @@ button {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--delay) var(--time-function);
 }
 
+/* Оформление кнопки Закрыть на модальном окне */
 .modal .btn-close {
   position: absolute;
   top: 0;
@@ -783,6 +792,7 @@ button {
   border-radius: 50%;
 }
 
+/* Позиционирование и оформление оверлея карточек в портфолио */
 .card-thumb {
   position: relative;
   overflow: hidden;
@@ -793,7 +803,7 @@ button {
   top: 0;
   left: 0;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--delay) var(--time-function);
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -804,10 +814,12 @@ button {
   opacity: 0.9;
 }
 
-.card-link:hover .card-overlay {
+.card-link:hover .card-overlay,
+.card-link:focus .card-overlay {
   transform: translateY(0);
 }
 
+/* Оформление текста на оверлее карточек в портфолио */
 .card-overlay > .describe {
   font-weight: 400;
   font-size: 18px;
